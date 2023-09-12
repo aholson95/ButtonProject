@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" /> 
+    <title>Button Project</title>
+</head>
+<body>
+      <img src="http://placekitten.com/300/200" alt="" />    
+        <h3 class="instruction">
+            This project is inside a small container, you can click to add to the counter
+            or hold down the button to speed up the counter.
+        </h3>
+        <h2 id="h22"> Select your color: <span id="colorOutput"></span><span id="output">rgb(0,0,0)</span></h2>
+        <div class="container">
+            <div class="wrapper">
+              R<input type="range" min="0" max="225" value="0" id="red" oninput="colors()">
+            </div> 
+            <div class="wrapper">
+              G<input type="range" min="0" max="225" value="0" id="green" oninput="colors()">
+            </div>
+            <div class="wrapper">
+              B<input type="range" min="0" max="255" value="0" id="blue" oninput="colors()">
+            </div>
+            <button id="btn">Click Here!</button>
+    <p>
+        Clicks: <span id="display">0</span>
+    </p>
+    <script type="text/javascript">
+        let count = 0;
+        let btn = document.getElementById("btn");
+        let disp = document.getElementById("display");
+         
+        btn.addEventListener("click", function () {
+            count++;
+            disp.innerHTML = count;
+        });
+         
+    </script> 
+          <script>
+          function colors(){
+                  var red= document.getElementById("red").value;
+                  var green= document.getElementById("green").value;
+                  var blue= document.getElementById("blue").value;
+                  document.body.style.backgroundColor = 'rgb('+ red +','+ green +','+ blue +')';
+                  document.getElementById("output").innerHTML = 'rgb('+ red +','+ green +','+ blue +')'
+              }
+           </script>
+              
+</body>
+</html> 
